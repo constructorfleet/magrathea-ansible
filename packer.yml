@@ -1,0 +1,12 @@
+---
+
+- hosts: all
+  roles:
+  - common
+  # Remove firewall task from Packer build
+  - firewall
+  - docker
+  - consul
+  - vault
+  - nomad
+  - elastic

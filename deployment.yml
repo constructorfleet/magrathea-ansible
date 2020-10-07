@@ -1,0 +1,20 @@
+---
+
+- hosts: all
+  tasks:
+  - import_role:
+      name: cryptography
+    tags:
+    - client
+  - import_role:
+      name: consul
+      tasks_from: deployment
+  - import_role:
+      name: vault
+      tasks_from: deployment
+  - import_role:
+      name: nomad
+      tasks_from: deployment
+  - import_role:
+      name: elastic
+      tasks_from: deployment
